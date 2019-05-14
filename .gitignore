@@ -11,3 +11,7 @@ build/
 doc/api/
 
 \.idea/
+
+ios/Runner/
+
+android/app/src/main/java/io/flutter/plugins/
