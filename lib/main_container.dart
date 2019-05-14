@@ -32,6 +32,7 @@ class _MainContainerState extends State<MainContainer> {
           TodoList(
             todoList: todoList,
             onSave: this.onSave,
+            onEdit: this.onEditTask,
           ),
         ],
         mainAxisAlignment: MainAxisAlignment.start,
@@ -54,6 +55,17 @@ class _MainContainerState extends State<MainContainer> {
         setState(() {
           todo.isEditing = false;
           todo.title = title;
+        });
+      }
+    });
+  }
+
+  void onEditTask(String id) {
+    print(id);
+    todoList.forEach((Todo todo) {
+      if (todo.id == id) {
+        setState(() {
+          todo.isEditing = true;
         });
       }
     });

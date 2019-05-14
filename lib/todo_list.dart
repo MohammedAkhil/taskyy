@@ -5,8 +5,9 @@ import 'todo.dart';
 class TodoList extends StatelessWidget {
   final List<Todo> todoList;
   final Function onSave;
+  final Function onEdit;
 
-  TodoList({@required this.todoList, this.onSave});
+  TodoList({@required this.todoList, this.onSave, this.onEdit});
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,7 @@ class TodoList extends StatelessWidget {
   }
 
   Widget buildTodo(int index) {
-    return TodoWidget(this.todoList[index], onSave: this.onSave,);
+    return TodoWidget(this.todoList[index],
+        onSave: this.onSave, onEdit: this.onEdit);
   }
 }
